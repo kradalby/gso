@@ -23,7 +23,7 @@
         </div>
 
         <div class="row"> 
-            <table class="table table-striped">
+            <table class="table table-striped table-bordered">
                 <tr>
                     <th>Navn</th>
                     <th>Spill</th>
@@ -32,12 +32,28 @@
                     <th>Addresse</th>
                 </tr>
                 {% for server in servers %}
-                    <tr>
-                        <td>{{ server.hostname }}</td>
-                        <td>{{ server.gamedesc }}</td>
-                        <td>{{ server.map }}</td>
-                        <td>{{ server.numplayers }}/{{ server.maxplayers }}</td>
-                        <td>b.fap.no:{{ server.port }}</td>
+                    <tr class="server">
+                        <td>{{ server.info.hostname }}</td>
+                        <td>{{ server.info.gamedesc }}</td>
+                        <td>{{ server.info.map }}</td>
+                        <td>{{ server.info.numplayers }}/{{ server.info.maxplayers }}</td>
+                        <td>b.fap.no:{{ server.info.port }}</td>
+                    </tr>
+                    <tr class="players">
+                        <td colspan="5">
+                            <table class="table table-striped table-bordered">
+                                <tr>
+                                    <th>Navn</th>
+                                    <th>Drap</th>
+                                </tr>
+                                {% for player in server.players %}
+                                    <tr>
+                                        <td>{{ player.name }}</td>
+                                        <td>{{ player.kill }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </td>
                     </tr>
                 {% endfor %}
             </table>
@@ -48,5 +64,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+        $(".players").hide();
+        $(".server").click(function() {
+            var d = $(this).next()
+            if (d.is(":visible")) {
+                d.hide(200);
+            } else {
+                d.show(200);
+            }
+        })
+    </script>
   </body>
 </html>

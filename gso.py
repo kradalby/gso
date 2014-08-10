@@ -15,7 +15,11 @@ SERVERS = (
 def index():
     servers = []
     for server in SERVERS:
-        servers.append(q(server[0], server[1]).info())
+        s = q(server[0], server[1])
+        servers.append({ 
+            "info": s.info(),
+            "players": s.player()
+            })
     return render_template('index.html', servers=servers)
 
 if __name__ == '__main__':
