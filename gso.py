@@ -22,6 +22,6 @@ def index():
             })
     return render_template('index.html', servers=servers)
 
-#if __name__ == '__main__':
-#    app.debug = True
-#    app.run()
+if __name__ == '__main__':
+    app.debug = True
+    app.run()
