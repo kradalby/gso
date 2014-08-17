@@ -2,7 +2,7 @@
 
 Quick implementation of a little overview for showing dfekt.no's game servers. 
 
-For querying the game servers i use the SourceQuery class from (SourceLib by Andreas Klauer)[https://github.com/frostschutz/SourceLib]
+For querying the game servers i use the SourceQuery class from [SourceLib by Andreas Klauer](https://github.com/frostschutz/SourceLib)
 
 The webserver is implemented using flask.
 
