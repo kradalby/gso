@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Game Server Overview</title>
+    <title>dfekt.no</title>
 
     <!-- Bootstrap -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
   <body>
     <div class="container">
         <div class="row">
-            <h1>Game Server Overview</h1>
+            <h1>dfekt.no</h1>
         </div>
 
         <div class="row"> 
@@ -37,7 +37,7 @@
                         <td>{{ server.info.gamedesc }}</td>
                         <td>{{ server.info.map }}</td>
                         <td>{{ server.info.numplayers }}/{{ server.info.maxplayers }}</td>
-                        <td>b.fap.no:{{ server.info.port }}</td>
+                        <td><a href='steam://connect/z.fap.no:{{ server.info.port }}'>g.dfekt.no:{{ server.info.port }}</a></td>
                     </tr>
                     <tr class="players">
                         <td colspan="5">
@@ -57,6 +57,34 @@
                     </tr>
                 {% endfor %}
             </table>
+        </div>
+        <div class="row">
+            <h2>Kontakt oss</h2>
+            <p>Vi bruker <a href="https://www.facebook.com/pages/dfektno">facebook</a> som vår kommunikasjonskanal, lik oss, post spørsmål eller send oss meldinger så svarer vi så raskt vi kan.</p>
+        </div>
+
+        <div class="row">
+            <h2>Om dfekt.no</h2>
+            <p></p>
+        </div>
+
+        <div class="footer navbar navbar-fixed-bottom">
+            <div class="text-center">
+                <p>
+                    Copyright &copy;
+                    <script type="text/javascript">
+                    var d = new Date()
+                    document.write(d.getFullYear())
+                    </script> dfekt.no
+                </p>
+                <p>
+                Utviklet med <a href="http://flask.pocoo.org">flask</a>, <a href="https://github.com/frostschutz/sourcelib">SourceLib</a> og <a href="http://getbootstrap.com">bootstrap</a>
+                </p>
+                <p>
+                Koden er tilgjenglig på <a href="https://github.com/kradalby/gso">GitHub</a>
+                </p>
+
+            </div>
         </div>
     </div>
 
