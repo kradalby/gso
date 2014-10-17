@@ -18,7 +18,7 @@ def index():
         s = q(server[0], server[1])
         servers.append({ 
             "info": s.info(),
-            "players": {key: unicode(value) for (key, value) in s.player()}
+            "players": s.player()
             })
     return render_template('index.html', servers=servers)
 
