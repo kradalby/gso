@@ -9,6 +9,9 @@ SERVERS = (
     ('z.fap.no', 27015),
     ('z.fap.no', 27016),
     ('z.fap.no', 27017),
+    ('z.fap.no', 27024),
+    ('z.fap.no', 27028),
+    ('z.fap.no', 27029),
 )
 
 @app.route('/')
