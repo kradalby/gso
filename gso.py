@@ -11,7 +11,7 @@ SERVERS = (
     ('z.fap.no', 27017),
     ('z.fap.no', 27024),
     ('z.fap.no', 27028),
-    ('z.fap.no', 27029),
+    #('z.fap.no', 27029),
 )
 
 @app.route('/')
