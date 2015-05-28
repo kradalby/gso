@@ -1,0 +1,8 @@
+image: python2.7
+script:
+  - pip install -r req.txt
+  - python setup.py test
+notify:
+  email:
+    recipients:
+      - kradalby@kradalby.no
