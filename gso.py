@@ -3,7 +3,10 @@
 from flask import Flask, render_template
 from SourceQuery import SourceQuery as q
 
+DEBUG = True
+
 app = Flask(__name__)
+app.debug = DEBUG
 
 SERVERS = (
     ('z.fap.no', 27015),
@@ -11,7 +14,7 @@ SERVERS = (
     ('z.fap.no', 27017),
     ('z.fap.no', 27024),
     ('z.fap.no', 27028),
-    #('z.fap.no', 27029),
+    ('z.fap.no', 27029),
 )
 
 @app.route('/')
@@ -26,10 +29,10 @@ def index():
                 "players": s.player()
                 })
             
-        except Exception, e:
+        except Exception as e:
             print(e)
     return render_template('index.html', servers=servers)
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run()
+    app.debug = DEBUG
+    app.run(port=5001)

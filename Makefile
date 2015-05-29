@@ -8,7 +8,8 @@ prod:
 	pip install -r requirements/prod.txt --upgrade
 
 env:
-	virtualenv -p `which python3` env
+	virtualenv -p `which python` env
+	source env/bin/activate
 
 clean:
 	find . -name "*.pyc" -exec rm -rf {} \;
