@@ -10,7 +10,7 @@ prod:
 	$(ENV)/pip install -r requirements/prod.txt --upgrade
 
 env:
-	$(ENV)/virtualenv -p `which python` env
+	virtualenv -p `which python` env
 
 clean:
 	find . -name "*.pyc" -exec rm -rf {} \;
