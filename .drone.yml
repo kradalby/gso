@@ -1,4 +1,4 @@
-image: python3.3
+image: python2.7
 script:
   - make prod
   - make test
