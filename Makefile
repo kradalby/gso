@@ -1,24 +1,27 @@
+ENV=./env/bin
+
 initjs:
 	npm install
 
 dev: 
-	pip install -r requirements/dev.txt --upgrade
+	$(ENV)/pip install -r requirements/dev.txt --upgrade
 
 prod:
-	pip install -r requirements/prod.txt --upgrade
+	$(ENV)/pip install -r requirements/prod.txt --upgrade
 
 env:
-	virtualenv -p `which python` env
-	source env/bin/activate
+	$(ENV)/virtualenv -p `which python` env
 
 clean:
 	find . -name "*.pyc" -exec rm -rf {} \;
 	rm -rf *.egg-info
 
 test:
-	python setup.py test
+	$(ENV)/python setup.py test
 
 run:
-	python gso.py
+	$(ENV)/python gso.py
 
+freeze:
+	$(ENV)/pip freeze
 
