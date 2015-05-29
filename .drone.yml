@@ -7,11 +7,3 @@ notify:
     email:
         recipients:
             - kradalby@kradalby.no
-+deploy:
-    ssh:
-        target: root@gengar.fap:/srv/www/dfekt.no/gso/ 21337
-    artifacts:
-        - build.result
-    cmd: 
-        - touch lol
-
