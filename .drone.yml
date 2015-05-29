@@ -1,6 +1,6 @@
 image: python3.3
 script:
-  - make dev
+  - make prod
   - make test
 notify:
   email:
