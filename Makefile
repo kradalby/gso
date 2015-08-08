@@ -1,10 +1,13 @@
 ENV=./env/bin
+PYTHON=$(ENV)/python
+PIP=$(ENV)/pip
+SETUP=$(PYTHON) setup.py
 
 dev: 
-	$(ENV)/pip install -r requirements/dev.txt --upgrade
+	$(PIP) install -r requirements/dev.txt --upgrade
 
 prod:
-	$(ENV)/pip install -r requirements/prod.txt --upgrade
+	$(PIP) install -r requirements/prod.txt --upgrade
 
 env:
 	virtualenv -p `which python3` env
@@ -19,11 +22,10 @@ clean:
 	rm -rf *.egg-info
 
 test:
-	$(ENV)/python setup.py test
+	$(SETUP) test
 
 run:
-	$(ENV)/python gso.py
+	$(PYTHON) gso.py
 
 freeze:
-	$(ENV)/pip freeze
-
+	$(PIP) freeze
