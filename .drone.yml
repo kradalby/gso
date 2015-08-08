@@ -2,8 +2,6 @@ image: evonove/ci
 git:
   path: github.com/kradalby/gso
 
-env:
-
 script:
     - pip install tox
     - tox
