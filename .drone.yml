@@ -1,18 +1,24 @@
-image: kradalby/ci-tox
-git:
-  path: github.com/kradalby/gso
-
-script:
-    - tox
+build:
+    image: kradalby/ci-tox:latest
+    pull: true
+    commands:
+      - tox
 
 notify:
   email:
+    from: drone@fap.no
+    host: smtp.stud.ntnu.no
+    port: 25
     recipients:
       - kradalby@kradalby.no
 
-
 deploy:
-  bash:
-    script:
-        - 'git clone https://github.com/kradalby/plays.git'
-        - 'ansible-playbook -i plays/inventory plays/deploy/gso.yml'
+  ssh:
+    host: onyx.fap.no
+    user: www
+    port: 22
+    commands:
+      - cd /usr/local/www/dfekt.no
+      - git pull
+      - make prod
+      - supervisorctl restart uwsgi_gso
