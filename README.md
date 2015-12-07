@@ -1,5 +1,5 @@
 # Game Server Overview
-[![Build Status](http://drone.fap.no/api/badge/github.com/kradalby/gso/status.svg?branch=master)](http://drone.fap.no/github.com/kradalby/gso)
+[![Build Status](https://drone.fap.no/api/badges/kradalby/gso/status.svg)](https://drone.fap.no/kradalby/gso)
 
 Quick implementation of a little overview for showing dfekt.no's game servers. 
 
