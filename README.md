@@ -14,7 +14,7 @@ The webserver is implemented using flask.
 
 Install Python 3, Pip, Virtualenv and build essentials:
 
-    apt-get install python3 python3-pip python-virtualenv build-essentials
+    apt-get install python3 python3-pip python-virtualenv build-essential
 
 
 ### Common
