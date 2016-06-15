@@ -17,12 +17,7 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 SERVERS = (
-    ('z.fap.no', 27015),
-    ('z.fap.no', 27016),
-    ('z.fap.no', 27017),
-    ('z.fap.no', 27024),
-    ('z.fap.no', 27028),
-    ('z.fap.no', 27029),
+    ('81.166.24.5', 27015),
 )
 
 
