@@ -25,6 +25,7 @@ SERVERS = (
     ('z.fap.no', 27029),
 )
 
+
 @app.route('/')
 def index():
     servers = []
