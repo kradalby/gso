@@ -25,7 +25,7 @@ test:
 	$(SETUP) test
 
 run:
-	$(PYTHON) gso.py
+	$(PYTHON) app.py
 
 freeze:
 	$(PIP) freeze
