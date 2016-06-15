@@ -1,6 +1,6 @@
 import unittest
 
-import gso
+import app as gso
 
 
 class GsoTestCase(unittest.TestCase):

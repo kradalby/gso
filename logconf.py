@@ -22,7 +22,7 @@ LOGGING = {
         },
     },
     'loggers': {
-        'gso': {
+        'app': {
             'handlers': ['file'],
             'level': 'DEBUG',
         },
