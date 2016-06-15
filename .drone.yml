@@ -12,16 +12,29 @@ notify:
     recipients:
       - kradalby@kradalby.no
 
-deploy:
-  ssh:
-    host: onyx.fap.no
-    user: www
-    port: 22
+publish:
+  docker:
+    registry: gengar.l.fap.no:5000
+    repo: gso/gso
+    tag: latest
+    insecure: true
     when:
         branch: master
+    load: docker/image.tar
+    save:
+      destination: docker/image.tar
+      tag: latest
+
+deploy:
+  ssh:
+    host:
+     - gengar.l.fap.no
+    user: root
+    port: 22
+    sleep: 2
     commands:
-      - cd /usr/local/www/dfekt.no
-      - git pull
-      - make env
-      - make prod
-      - supervisorctl restart uwsgi_gso
+      - docker pull registry.fap.no/gso/gso:latest
+      - docker-compose -f /srv/docker/gso/docker-compose.yml stop
+      - docker-compose -f /srv/docker/gso/docker-compose.yml up -d
+    when:
+        branch: master
