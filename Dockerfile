@@ -17,11 +17,6 @@ RUN pip install -r requirements/production.txt --upgrade
 # Copy project files
 COPY . $DIR
 
-RUN mkdir static media
-ENV DJANGO_SETTINGS_MODULE=$NAME.settings.base
-RUN python manage.py collectstatic --noinput --clear
-ENV DJANGO_SETTINGS_MODULE=$NAME.settings.prod
-
 EXPOSE 8080
 EXPOSE 8081
 
