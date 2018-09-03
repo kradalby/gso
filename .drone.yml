@@ -1,13 +1,9 @@
-
 pipeline:
-  test:
-    image: python:3.5.2
-    environment:
-      - DJANGO_SETTINGS_MODULE=init_django.settings.dev
-    commands:
-      - pip install tox
-      - tox
-
+  build:
+    image: plugins/docker
+    repo: kradalby/gso
+    auto_tag: true
+    secrets: [ docker_username, docker_password ]
 
   notify:
     image: drillster/drone-email
@@ -17,27 +13,3 @@ pipeline:
     recipients: [ kradalby@kradalby.no ]
     when:
       status: [ success, changed, failure ]
-
-
-  docker:
-    image: plugins/docker
-    repo: registry.fap.no/gso/gso
-    insecure: true
-    tags:
-        - latest
-    when:
-        branch: master
-
-  ssh:
-    image: appleboy/drone-ssh
-    host:
-     - primeape.terra.fap.no
-    user: root
-    port: 22
-    script:
-      - docker pull registry.fap.no/gso/gso:latest
-      - docker-compose -f /srv/docker/gso/docker-compose.yml stop
-      - docker-compose -f /srv/docker/gso/docker-compose.yml up -d
-    when:
-        status: success
-        branch: master
