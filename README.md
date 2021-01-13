@@ -1,4 +1,5 @@
 # Game Server Overview
+
 [![Build Status](https://drone.fap.no/api/badges/kradalby/gso/status.svg)](https://drone.fap.no/kradalby/gso)
 
 Quick implementation of a little overview for showing dfekt.no's game servers.
@@ -7,7 +8,6 @@ For querying the game servers i use the SourceQuery class from [SourceLib by And
 
 The webserver is implemented using flask.
 
-
 ## Installation
 
 ### Debian
@@ -15,7 +15,6 @@ The webserver is implemented using flask.
 Install Python 3, Pip, Virtualenv and build essentials:
 
     apt-get install python3 python3-pip python-virtualenv build-essential
-
 
 ### Common
 
